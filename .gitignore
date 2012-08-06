@@ -1,9 +1,9 @@
 logs
 project/project
 project/target
-target
+# target #save everything on github
 tmp
 .history
-dist
+# dist #save everything on github
 
 .idea*
