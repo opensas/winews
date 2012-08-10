@@ -46,7 +46,7 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Aug 10 05:02:17 ART 2012
+                    DATE: Fri Aug 10 05:04:55 ART 2012
                     SOURCE: /home/sas/dev/apps/backbone/winews/app/views/main.scala.html
                     HASH: 6a9d3e71a4db67b23442aa0e15837c7026dc07bb
                     MATRIX: 509->1|616->31|704->84|730->89|827->151|841->157|896->191|992->252|1006->258|1059->290|1120->315|1135->321|1202->366|1305->433|1334->440
