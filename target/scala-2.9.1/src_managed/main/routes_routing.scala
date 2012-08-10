@@ -1,6 +1,6 @@
 // @SOURCE:/home/sas/dev/apps/backbone/winews/conf/routes
 // @HASH:c8dd0efcf0d9fc75268afcae9305cd4baf2ef0a6
-// @DATE:Fri Aug 10 05:04:54 ART 2012
+// @DATE:Fri Aug 10 13:13:06 ART 2012
 
 import play.core._
 import play.core.Router._
