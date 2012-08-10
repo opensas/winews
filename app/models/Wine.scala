@@ -57,15 +57,11 @@ object Wine {
     page: Int = 1, len: Int = DEFAULT_PAGE_LEN, 
     order: String = "name", filter: String = ""
   ): List[Wine] = {
-    findWithParser(fields="*", page=page, len=len, filter=filter, parser=Wine.simpleParser *)
+    findWithParser(fields="*", page=page, len=len, order=order, filter=filter, parser=Wine.simpleParser *)
   }
 
-  def count(entity: String = "", filter: String = ""): Long = {
+  def count(filter: String = ""): Long = {
     findWithParser(fields="count(*)", page=1, len=1, order = "", filter=filter, parser=scalar[Long].single)
-  }
-
-  def count(): Long = {
-    count("", "")
   }
 
   private def findWithParser[T](
@@ -76,7 +72,11 @@ object Wine {
     DB.withConnection { implicit connection =>
 
       val condition = if (filter == "") "" else {
-        "where (name like {filter} or country like {filter} or description like {filter})"
+        "where (" +
+          List("name", "grapes", "country", "region", "year")
+          .map( field => "lower(%s) like lower({filter})".format(field) )
+          .mkString(" or ") + 
+        ")"
       }
 
       val orderBy = if (order == "") "" else "order by " + order
@@ -88,7 +88,7 @@ object Wine {
       ).on(
         'offset     -> (page-1) * len,
         'len        -> len,
-        'filter     -> ("%"+filter+"%")
+        'filter     -> ("%"+filter.toLowerCase()+"%")
       ).as(parser)
     }
 

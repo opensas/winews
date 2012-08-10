@@ -1,7 +1,7 @@
 logs
 project/project
 project/target
-# target #save everything on github
+target #save everything on github
 tmp
 .history
 # dist #save everything on github

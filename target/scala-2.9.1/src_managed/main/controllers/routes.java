@@ -1,6 +1,6 @@
 // @SOURCE:/home/sas/dev/apps/backbone/winews/conf/routes
 // @HASH:c8dd0efcf0d9fc75268afcae9305cd4baf2ef0a6
-// @DATE:Mon Aug 06 13:01:19 ART 2012
+// @DATE:Fri Aug 10 05:02:16 ART 2012
 
 package controllers;
 
